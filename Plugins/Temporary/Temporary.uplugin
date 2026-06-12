@@ -1,0 +1,24 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Temporary",
+  "Description": "Temporary test plugin",
+  "Category": "Examples",
+  "CreatedBy": "NBC_HW10",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EnabledByDefault": true,
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "Temporary",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
