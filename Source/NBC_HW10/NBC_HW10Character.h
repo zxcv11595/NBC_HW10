@@ -13,6 +13,8 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 
+class UCharacterData;
+
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
@@ -48,6 +50,9 @@ public:
 	ANBC_HW10Character();
 
 protected:
+	virtual void BeginPlay() override;
+
+protected:
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
@@ -70,5 +75,9 @@ public:
 
 public:
 	void SpawnTestActor();
+
+protected:
+	UPROPERTY()
+	TObjectPtr<UCharacterData> CharacterData;
 };
 

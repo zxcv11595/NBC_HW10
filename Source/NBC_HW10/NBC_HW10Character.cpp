@@ -11,6 +11,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Test/TestActor.h"
+#include "CharacterData.h"
+#include "Engine/Engine.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -53,6 +55,40 @@ ANBC_HW10Character::ANBC_HW10Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+}
+
+void ANBC_HW10Character::BeginPlay()
+{
+	Super::BeginPlay();
+
+	CharacterData = NewObject<UCharacterData>(this);
+
+	if (!CharacterData)
+	{
+		return;
+	}
+
+	FString CharacterDataString = FString::Printf(
+		TEXT("Name: %s / Level: %d / MaxHealth: %.1f / CurrentHealth: %.1f / MoveSpeed: %.1f"),
+		*CharacterData->CharacterName,
+		CharacterData->Level,
+		CharacterData->MaxHealth,
+		CharacterData->CurrentHealth,
+		CharacterData->MoveSpeed
+	);
+
+	UE_LOG(LogTemp, Warning, TEXT("s"), *CharacterDataString);
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			100.0f,
+			FColor::Green,
+			CharacterDataString
+		);
+	}
+
 }
 
 
