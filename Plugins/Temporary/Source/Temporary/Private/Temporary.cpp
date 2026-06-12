@@ -31,4 +31,5 @@ void FTemporaryModule::ShutdownModule()
     }
 }
 
+// Temporary 모듈을 언리얼 모듈 시스템에 등록
 IMPLEMENT_MODULE(FTemporaryModule, Temporary)

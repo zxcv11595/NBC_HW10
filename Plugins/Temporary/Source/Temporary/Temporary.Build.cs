@@ -6,9 +6,9 @@ public class Temporary : ModuleRules
     {
         PublicDependencyModuleNames.AddRange(
             new string[] {
-                "Core",
-                "CoreUObject",
-                "Engine"
+                "Core",         
+                "CoreUObject",  
+                "Engine"        
             }
         );
     }
